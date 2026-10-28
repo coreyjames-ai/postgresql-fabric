@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/stories/pricing-writes-by-what-they-cost/  
 Author: Corey James · Published: 2026-10-28 · Kind: story  
+DOI: https://doi.org/10.5281/zenodo.23735156 (this page is a chapter of the system's report)  
 Systems: [PostgreSQL Fabric](https://github.com/coreyjames-ai/postgresql-fabric) · [FAFO Core and Function Forge](https://github.com/coreyjames-ai/fafo-core) · [Inference Fabric](https://github.com/coreyjames-ai/inference-fabric)  
 Technologies: [Admission control and rate limiting](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/admission-control-and-rate-limiting) · [Lua](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/lua) · [PostgreSQL](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/postgresql) · [PostgreSQL bulk-update engineering](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/postgresql-bulk-update-engineering) · [Redis](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/redis) · [Rust](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/rust)  
 Skills: [database admission control](https://github.com/coreyjames-ai/portfolio/tree/main/skills/database-admission-control) · [distributed systems correctness](https://github.com/coreyjames-ai/portfolio/tree/main/skills/distributed-systems-correctness) · [inference serving architecture](https://github.com/coreyjames-ai/portfolio/tree/main/skills/inference-serving-architecture) · [embedding analytics and cluster metrics](https://github.com/coreyjames-ai/portfolio/tree/main/skills/embedding-analytics-and-cluster-metrics)  
@@ -74,7 +75,7 @@ Each line is a claim the canonical page supports, with the figure as the page st
 
 ## Citation
 
-Corey James. "Pricing writes by what they cost the database." coreyjames.ai, 2026. https://coreyjames.ai/stories/pricing-writes-by-what-they-cost/
+Corey James. "Pricing writes by what they cost the database." coreyjames.ai, 2026. https://coreyjames.ai/stories/pricing-writes-by-what-they-cost/ In: the PostgreSQL Fabric technical report, doi:10.5281/zenodo.23735156.
 
 ```bibtex
 @misc{coreyjames-pricing-writes-by-what-they-cost,
@@ -82,7 +83,8 @@ Corey James. "Pricing writes by what they cost the database." coreyjames.ai, 202
   title = {Pricing writes by what they cost the database},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/stories/pricing-writes-by-what-they-cost/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/pricing-writes-by-what-they-cost}
+  note = {GitHub copy: https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/pricing-writes-by-what-they-cost},
+  doi = {10.5281/zenodo.23735156}
 }
 ```
 

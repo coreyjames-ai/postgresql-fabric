@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/systems/postgresql-fabric/  
 Author: Corey James · Published: 2026-10-28 · Kind: system  
+DOI: https://doi.org/10.5281/zenodo.23735156  
 Technologies: [Admission control and rate limiting](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/admission-control-and-rate-limiting) · [Database performance diagnosis](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/database-performance-diagnosis) · [Lua](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/lua) · [MessagePack](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/messagepack) · [PostgreSQL](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/postgresql) · [PostgreSQL bulk-update engineering](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/postgresql-bulk-update-engineering) · [Redis](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/redis) · [Rust](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/rust) · [SQL](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/sql) · [Schema and migration discipline](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/schema-and-migration-discipline) · [Write-behind persistence](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/write-behind-persistence) · [pgvector](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/pgvector) · [sqlx](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/sqlx)  
 Skills: [PostgreSQL performance tuning](https://github.com/coreyjames-ai/portfolio/tree/main/skills/postgresql-performance-tuning) · [Rust systems engineering](https://github.com/coreyjames-ai/portfolio/tree/main/skills/rust-systems-engineering) · [database admission control](https://github.com/coreyjames-ai/portfolio/tree/main/skills/database-admission-control) · [tool synthesis and governed API integration](https://github.com/coreyjames-ai/portfolio/tree/main/skills/tool-synthesis-and-governed-api-integration)  
 
@@ -125,7 +126,7 @@ Part of [Corey James's portfolio](https://github.com/coreyjames-ai/portfolio): r
 
 ## Citation
 
-Corey James. "PostgreSQL Fabric." coreyjames.ai, 2026. https://coreyjames.ai/systems/postgresql-fabric/
+Corey James. "PostgreSQL Fabric." coreyjames.ai, 2026. https://coreyjames.ai/systems/postgresql-fabric/ In: the PostgreSQL Fabric technical report, doi:10.5281/zenodo.23735156.
 
 ```bibtex
 @misc{coreyjames-postgresql-fabric,
@@ -133,7 +134,8 @@ Corey James. "PostgreSQL Fabric." coreyjames.ai, 2026. https://coreyjames.ai/sys
   title = {PostgreSQL Fabric},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/systems/postgresql-fabric/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/postgresql-fabric}
+  note = {GitHub copy: https://github.com/coreyjames-ai/postgresql-fabric},
+  doi = {10.5281/zenodo.23735156}
 }
 ```
 

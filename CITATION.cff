@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: Cite this repository's report by its DOI.
+type: dataset
+title: "PostgreSQL Fabric: One governed write path for a GPU-scale estate: batches sized from the database's own limits, workers that follow the queue, admission that reads the database's pressure, and the heavy work run inside the database next to its indexes"
+authors:
+  - given-names: Corey
+    family-names: James
+    orcid: https://orcid.org/0009-0008-7246-963X
+doi: 10.5281/zenodo.23735156
+date-released: 2026-10-28
+url: https://coreyjames.ai/systems/postgresql-fabric/
+repository-code: https://github.com/coreyjames-ai/postgresql-fabric
+license: CC-BY-4.0
+abstract: "One governed write path for a GPU-scale estate: batches sized from the database's own limits, workers that follow the queue, admission that reads the database's pressure, and the heavy work run inside the database next to its indexes"

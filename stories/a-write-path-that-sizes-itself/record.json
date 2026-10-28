@@ -41,5 +41,8 @@
  "canonical": "https://coreyjames.ai/stories/a-write-path-that-sizes-itself/",
  "datePublished": "2026-10-28",
  "author": "Corey James",
- "github": "https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/a-write-path-that-sizes-itself"
+ "github": "https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/a-write-path-that-sizes-itself",
+ "doi": "10.5281/zenodo.23735156",
+ "doi_relation": "part-of",
+ "author_orcid": "https://orcid.org/0009-0008-7246-963X"
 }

@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/stories/twenty-thousand-rows-a-second/  
 Author: Corey James · Published: 2026-10-28 · Kind: story  
+DOI: https://doi.org/10.5281/zenodo.23735156 (this page is a chapter of the system's report)  
 Systems: [PostgreSQL Fabric](https://github.com/coreyjames-ai/postgresql-fabric) · [FAFO Core and Function Forge](https://github.com/coreyjames-ai/fafo-core) · [Inference Fabric](https://github.com/coreyjames-ai/inference-fabric)  
 Technologies: [Database performance diagnosis](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/database-performance-diagnosis) · [PostgreSQL](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/postgresql) · [PostgreSQL bulk-update engineering](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/postgresql-bulk-update-engineering) · [Rust](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/rust) · [SQL](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/sql) · [pgvector](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/pgvector) · [sqlx](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/sqlx)  
 Skills: [PostgreSQL performance tuning](https://github.com/coreyjames-ai/portfolio/tree/main/skills/postgresql-performance-tuning) · [high-throughput batch inference](https://github.com/coreyjames-ai/portfolio/tree/main/skills/high-throughput-batch-inference) · [vector search and ANN indexes](https://github.com/coreyjames-ai/portfolio/tree/main/skills/vector-search-and-ann-indexes)  
@@ -71,7 +72,7 @@ Each line is a claim the canonical page supports, with the figure as the page st
 
 ## Citation
 
-Corey James. "Twenty thousand rows a second." coreyjames.ai, 2026. https://coreyjames.ai/stories/twenty-thousand-rows-a-second/
+Corey James. "Twenty thousand rows a second." coreyjames.ai, 2026. https://coreyjames.ai/stories/twenty-thousand-rows-a-second/ In: the PostgreSQL Fabric technical report, doi:10.5281/zenodo.23735156.
 
 ```bibtex
 @misc{coreyjames-twenty-thousand-rows-a-second,
@@ -79,7 +80,8 @@ Corey James. "Twenty thousand rows a second." coreyjames.ai, 2026. https://corey
   title = {Twenty thousand rows a second},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/stories/twenty-thousand-rows-a-second/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/twenty-thousand-rows-a-second}
+  note = {GitHub copy: https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/twenty-thousand-rows-a-second},
+  doi = {10.5281/zenodo.23735156}
 }
 ```
 

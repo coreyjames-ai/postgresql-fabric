@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/stories/a-write-path-that-sizes-itself/  
 Author: Corey James · Published: 2026-10-28 · Kind: story  
+DOI: https://doi.org/10.5281/zenodo.23735156 (this page is a chapter of the system's report)  
 Systems: [PostgreSQL Fabric](https://github.com/coreyjames-ai/postgresql-fabric) · [FAFO Core and Function Forge](https://github.com/coreyjames-ai/fafo-core) · [Inference Fabric](https://github.com/coreyjames-ai/inference-fabric)  
 Technologies: [Capacity engineering, backpressure and load testing](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/capacity-engineering-backpressure-and-load-testing) · [PostgreSQL](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/postgresql) · [PostgreSQL bulk-update engineering](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/postgresql-bulk-update-engineering) · [Redis](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/redis) · [Rust](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/rust) · [Write-behind persistence](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/write-behind-persistence)  
 Skills: [PostgreSQL performance tuning](https://github.com/coreyjames-ai/portfolio/tree/main/skills/postgresql-performance-tuning)  
@@ -78,7 +79,7 @@ Each line is a claim the canonical page supports, with the figure as the page st
 
 ## Citation
 
-Corey James. "A write path that sizes itself." coreyjames.ai, 2026. https://coreyjames.ai/stories/a-write-path-that-sizes-itself/
+Corey James. "A write path that sizes itself." coreyjames.ai, 2026. https://coreyjames.ai/stories/a-write-path-that-sizes-itself/ In: the PostgreSQL Fabric technical report, doi:10.5281/zenodo.23735156.
 
 ```bibtex
 @misc{coreyjames-a-write-path-that-sizes-itself,
@@ -86,7 +87,8 @@ Corey James. "A write path that sizes itself." coreyjames.ai, 2026. https://core
   title = {A write path that sizes itself},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/stories/a-write-path-that-sizes-itself/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/a-write-path-that-sizes-itself}
+  note = {GitHub copy: https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/a-write-path-that-sizes-itself},
+  doi = {10.5281/zenodo.23735156}
 }
 ```
 
