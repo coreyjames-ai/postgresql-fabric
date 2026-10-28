@@ -1,0 +1,45 @@
+{
+ "url": "https://coreyjames.ai/stories/a-write-path-that-sizes-itself/",
+ "kind": "story",
+ "title": "A write path that sizes itself",
+ "subtitle": "Batches sized from the payload's own width under PostgreSQL's parameter limit, writer workers that follow queue demand, and the batch-size knobs deliberately taken away from operators",
+ "systems": [
+  "postgresql-fabric",
+  "fafo-core",
+  "inference-fabric"
+ ],
+ "technologies": [
+  "Write-behind persistence",
+  "PostgreSQL",
+  "Redis",
+  "Capacity engineering, backpressure and load testing",
+  "Rust"
+ ],
+ "stats": [
+  {
+   "value": "~240",
+   "label": "updates per second each writer worker sustained in the benchmark"
+  },
+  {
+   "value": "~1,929",
+   "label": "updates per second held at eight workers"
+  },
+  {
+   "value": "99.25%",
+   "label": "buffer hit rate on that run, with I/O wait under 0.2 percent"
+  }
+ ],
+ "lede": "Every function in my estate reads PostgreSQL directly and writes it through one service. Producers serialise each write into a stream message and move on; a writer service consumes the streams, groups messages by destination table and operation, and writes them in batched transactions at the pace the database can absorb. The interesting part is that nobody tells it how big a batch should be or how many workers to run. PostgreSQL caps the bind parameters in one statement. A batch that exceeds the limit fails outright, and a batch far below it wastes round trips. The right batch size therefore depends on how many parameters each row binds, which depends on the destination and the operation.",
+ "quote": "The fix moved the width to where it is known, the producer.",
+ "evidence": [
+  "Capacity engineering and load testing: writer pool bounds taken from a benchmark on a 24-core host, about 240 updates per second per worker, the CPU saturated above 16 workers.",
+  "PostgreSQL performance tuning: batches sized from each payload's own width, fixing a sizing error that held one table at 3,640 rows per batch when it could take 10,000.",
+  "Self-tuning systems design: batch-size settings removed from the operator surface, which keeps status, scaling bounds, presets and audited configuration.",
+  "Write-behind persistence: about 1,929 updates per second held at eight workers with a 99.25% buffer hit rate."
+ ],
+ "problem": "data-paths",
+ "canonical": "https://coreyjames.ai/stories/a-write-path-that-sizes-itself/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/a-write-path-that-sizes-itself"
+}

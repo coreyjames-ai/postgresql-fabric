@@ -1,0 +1,46 @@
+{
+ "url": "https://coreyjames.ai/systems/postgresql-fabric/",
+ "kind": "system",
+ "title": "PostgreSQL Fabric",
+ "subtitle": "One governed write path for a GPU-scale estate: batches sized from the database's own limits, workers that follow the queue, admission that reads the database's pressure, and the heavy work run inside the database next to its indexes",
+ "systems": [],
+ "technologies": [
+  "PostgreSQL",
+  "PostgreSQL bulk-update engineering",
+  "Write-behind persistence",
+  "Admission control and rate limiting",
+  "Redis",
+  "Lua",
+  "sqlx",
+  "Database performance diagnosis",
+  "pgvector",
+  "Rust"
+ ],
+ "stats": [
+  {
+   "value": "0.3 s",
+   "label": "a batch update that had taken more than 25 seconds"
+  },
+  {
+   "value": "400 GB",
+   "label": "of indexes that no query had ever read, removed"
+  },
+  {
+   "value": "16,000",
+   "label": "lines of Rust in the writer and its library, the queue logic in Lua"
+  }
+ ],
+ "lede": "Every system in my estate reads PostgreSQL directly and writes it through one path. Hundreds of GPU and CPU workers produce results at the speed of the hardware, and a database that received each of those writes as it happened would spend its life holding connections and locks across GPU waits, with write load tracking GPU throughput rather than what the database can absorb. PostgreSQL Fabric is the layer that turns that firehose into batched, ordered, admitted writes, and that carries the work which belongs inside the database to the database. Producers never hold a database connection for a write.",
+ "quote": "A self-tuning system that can be hand-tuned will be mistuned.",
+ "evidence": [
+  "PostgreSQL performance tuning: a batch update that had taken more than 25 seconds brought to 0.3 s.",
+  "Index cost analysis: 400 GB of indexes that no query had ever read, removed and counted as write cost.",
+  "Write-behind persistence: hundreds of GPU and CPU workers hand off their writes and move on, with no producer holding a database connection.",
+  "Database admission control: writes admitted against the database's own pressure, proven in shadow mode before it could refuse one.",
+  "Rust systems engineering: 16,000 lines of Rust in the writer and its library, with the queue logic in Lua."
+ ],
+ "canonical": "https://coreyjames.ai/systems/postgresql-fabric/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/postgresql-fabric"
+}

@@ -1,0 +1,46 @@
+{
+ "url": "https://coreyjames.ai/stories/pricing-writes-by-what-they-cost/",
+ "kind": "story",
+ "title": "Pricing writes by what they cost the database",
+ "subtitle": "An admission controller that reads the database's own pressure, write-ahead-log rate, active writers and lock waits, and admits work only as fast as the database can take it",
+ "systems": [
+  "postgresql-fabric",
+  "fafo-core",
+  "inference-fabric"
+ ],
+ "technologies": [
+  "Admission control and rate limiting",
+  "PostgreSQL",
+  "Redis",
+  "Lua",
+  "Rust"
+ ],
+ "stats": [
+  {
+   "value": "4",
+   "label": "pressure signals, all read from the database's own statistics"
+  },
+  {
+   "value": "3",
+   "label": "modes: off, shadow and enforce"
+  },
+  {
+   "value": "1",
+   "label": "lattice-wide function running inside the database at a time"
+  }
+ ],
+ "lede": "GPU-scale producers can push a database into trouble long before any query fails. The write path described in A write path that sizes itself keeps the database from being hammered by individual workers; the admission controller keeps the whole fleet from exceeding what the database can absorb. A sampler reads the database's own statistics, the write-ahead log, its writers, its locks and its statement statistics. Each signal is normalised between a healthy level and a critical one, and the signals are combined into one pressure index. The weights are tuned to this estate and stay private; the shape of the index does not.",
+ "quote": "It measures the database and spends the measurement.",
+ "evidence": [
+  "Database admission control: an admission controller that combines 4 pressure signals from the database's own statistics, write-ahead log, writers, locks and statement statistics, into one pressure index for a GPU-scale fleet.",
+  "Rate limiting: token buckets in log bytes, rows and write slots per lane and per schema that refill in full, partly or not at all by pressure band, with an atomic admit-or-hold check in the queue store.",
+  "Distributed systems correctness: lattice-wide in-database functions held to 1 at a time under a lock with a heartbeat and a time-to-live, so a crashed holder cannot block the lane and a stale one cannot release it.",
+  "Shadow-mode rollout: 3 modes, off, shadow and enforce, with shadow mode logging every decision without holding anything, so thresholds were set against real load before any write was refused.",
+  "Multi-tenant fairness: schemas take turns so one tenant cannot monopolise the buckets, waiting batches gain priority with age, and a slow function throttles only its own writes."
+ ],
+ "problem": "data-paths",
+ "canonical": "https://coreyjames.ai/stories/pricing-writes-by-what-they-cost/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/pricing-writes-by-what-they-cost"
+}

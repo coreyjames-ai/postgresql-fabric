@@ -1,0 +1,43 @@
+{
+ "url": "https://coreyjames.ai/stories/rules-that-never-ran/",
+ "kind": "story",
+ "title": "Rules that never ran",
+ "subtitle": "The writer's batch-release rules had been silently unused, workers were grabbing whatever arrived, and 145 of 153 stream consumers were ghosts; how the write path was found out and rebuilt",
+ "systems": [
+  "postgresql-fabric",
+  "fafo-core"
+ ],
+ "technologies": [
+  "Redis",
+  "Lua",
+  "Write-behind persistence",
+  "Database performance diagnosis",
+  "Rust"
+ ],
+ "stats": [
+  {
+   "value": "8 of 153",
+   "label": "registered stream consumers that were alive when measured"
+  },
+  {
+   "value": "47+",
+   "label": "stale consumers left behind by restarts"
+  },
+  {
+   "value": "3",
+   "label": "defects found at once"
+  }
+ ],
+ "lede": "The write path had rules for when a batch should be released: enough messages for a destination, or enough age, with priorities so urgent writes went first. The rules were written in scripts that ran inside the queue store, and they were correct. They were also never consulted. Batches were arriving at the database in random sizes, with several workers contending for the same messages, and the throughput looked nothing like the design. The investigation found three things at once. Workers were reading new messages from the stream directly, which bypassed the release scripts entirely, so each worker took whatever had arrived since its last read.",
+ "quote": "The design was being ignored rather than violated.",
+ "evidence": [
+  "Distributed systems debugging: 3 defects found at once, a stream-read bypass, a misnamed configuration key and 47+ stale consumers, none of which raised an error.",
+  "Observability and alerting: the batch-size distribution and consumer-against-process counts turned into metrics after they were the only evidence of the fault.",
+  "Message broker and queue design: a write path rebuilt so the release rules are the only path, after only 8 of 153 registered consumers were found alive."
+ ],
+ "problem": "data-paths",
+ "canonical": "https://coreyjames.ai/stories/rules-that-never-ran/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/rules-that-never-ran"
+}

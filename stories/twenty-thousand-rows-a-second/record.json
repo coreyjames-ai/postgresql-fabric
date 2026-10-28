@@ -1,0 +1,46 @@
+{
+ "url": "https://coreyjames.ai/stories/twenty-thousand-rows-a-second/",
+ "kind": "story",
+ "title": "Twenty thousand rows a second",
+ "subtitle": "A batch update that took twenty-five seconds became a third of a second: one SQL rewrite that makes parameter count independent of row count, and nearly 400 GB of indexes that nobody had ever read",
+ "systems": [
+  "postgresql-fabric",
+  "fafo-core",
+  "inference-fabric"
+ ],
+ "technologies": [
+  "PostgreSQL",
+  "SQL",
+  "pgvector",
+  "Database performance diagnosis",
+  "Rust",
+  "sqlx"
+ ],
+ "stats": [
+  {
+   "value": "0.3 s",
+   "label": "per batch update, down from 25 s, with more rows in each"
+  },
+  {
+   "value": "20,000",
+   "label": "rows per second, up from 50, read from the database's own counters"
+  },
+  {
+   "value": "0.19 ms",
+   "label": "per row at most after the rewrite, and as low as 0.06 ms"
+  }
+ ],
+ "lede": "My research pipeline writes its results back to PostgreSQL through one governed write path, and in a 3.4-million-item run that path was the bottleneck. Each batch update of about 1,350 rows cost roughly 19 milliseconds a row, and the queue behind it grew past 140,000 messages. Two changes fixed it: a different shape of UPDATE statement, and the removal of indexes that had never been used. The original update built a table of values inline, joined it to the target and bound one parameter per cell. PostgreSQL allows 65,535 bind parameters per statement, so a twenty-column payload capped a batch at a few thousand rows, and the planner materialised the whole derived table before it could join.",
+ "quote": "A queue message is not a row.",
+ "evidence": [
+  "PostgreSQL performance tuning: a batch update cut from 25 s to 0.3 s by binding one array per column, with per-row cost of 0.06-0.19 ms.",
+  "SQL query design: a parameter count independent of row count under PostgreSQL's 65,535 bind-parameter limit, with the old form kept as a fallback.",
+  "Index cost analysis: never-scanned approximate-nearest-neighbour indexes found through two catalog queries and dropped, with recreation commands kept for rollback.",
+  "Throughput measurement methodology: throughput read from the database's own tuple and commit counters, 50 to 20,000 rows per second, never from queue length."
+ ],
+ "problem": "data-paths",
+ "canonical": "https://coreyjames.ai/stories/twenty-thousand-rows-a-second/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/postgresql-fabric/tree/main/stories/twenty-thousand-rows-a-second"
+}
